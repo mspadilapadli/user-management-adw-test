@@ -1,15 +1,10 @@
-// "use client";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import Link from "next/link";
 import NotificationError from "../../components/NotificationError";
 export default function Login() {
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-
     const handleSubmit = async (formData: FormData) => {
         "use server";
-        // e.preventDefault();
 
         const username = formData.get("username");
         const password = formData.get("password");
@@ -35,10 +30,9 @@ export default function Login() {
         const data = (await response.json()) as {
             access_token: string;
         };
-        // console.log(data);
 
         cookies().set("Authorization", `Bearer ${data.access_token}`);
-        // console.log(data.access_token, "respone json");
+
         redirect("/admin-management/list-user");
     };
     return (
@@ -56,10 +50,7 @@ export default function Login() {
                         <span className="font-light text-sm text-gray-400 mb-8">
                             Welcom back! Please enter your details
                         </span>
-                        {/* <div>
-                            email :{email} <br />
-                            pass : {password}
-                        </div> */}
+
                         <form action={handleSubmit}>
                             <div className="py-4">
                                 <span className="mb-2 text-md text-sm">

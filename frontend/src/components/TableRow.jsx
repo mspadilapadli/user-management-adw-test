@@ -1,30 +1,7 @@
 import axios from "axios";
 import Link from "next/link";
-// import ConfirmDelete from "../components/ConfirmDelete";
-export default function Table({ e, i, skip, currentPage, fetchData }) {
-    // console.log(e, "id ni boss");
 
-    // const deleteOrder = async () => {
-    //     try {
-    //         const { data } = await axios({
-    //             method: "DELETE",
-    //             url:
-    //                 "https://mock.apidog.com/m1/523540-0-default/api/order/" +
-    //                 `${e.id}`,
-    //             headers: {
-    //                 "User-Agent": "Apidog/1.0.0 (https://apidog.com)",
-    //             },
-    //         });
-    //         // console.log(accessToken);
-    //         // console.log(data.list, "data list");
-    //         console.log(data, "---<data ");
-    //         fetchOrderList();
-    //     } catch (error) {
-    //         console.log(error);
-    //         // showToast(error.response.data.message);
-    //     }
-    // };
-
+export default function Table({ e, i, skip, fetchData }) {
     return (
         <>
             <tr>
@@ -71,12 +48,7 @@ export default function Table({ e, i, skip, currentPage, fetchData }) {
                             />
                         </svg>
                     </Link>
-                    <button
-                    // onClick={() => {
-                    //     <ConfirmDelete />;
-                    //     //  window.location.reload();
-                    // }}
-                    >
+                    <button>
                         <svg
                             width="25"
                             height="24"

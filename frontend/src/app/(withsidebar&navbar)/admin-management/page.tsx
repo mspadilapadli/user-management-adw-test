@@ -1,3 +1,3 @@
 export default function OrderManagement() {
-    return <div>ORDER MANAGEMENT PAGE</div>;
+    return <div></div>;
 }

@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 
 export default function DetailUser({ params }) {
     const [detailUser, setDetailUser] = useState({});
-    //  console.log(params, "params s ss s");
+
     const userId = params.user_id;
-    // console.log(userId, "<---order id");
 
     const fetchDetailUser = async () => {
         try {
@@ -14,20 +13,14 @@ export default function DetailUser({ params }) {
                 method: "get",
                 url: "https://dummyjson.com/users/" + `${userId}`,
             });
-            // console.log(accessToken);
-            // console.log(data.list, "data list");
-            console.log(data, "---<data ");
+
             setDetailUser(data);
         } catch (error) {
             console.log(error);
             // showToast(error.response.data.message);
         }
     };
-    //  const totalPrice = detailUser.products?.detailUser.products
-    //      .map((product) => product.quantity * product.product_price)
-    //      .reduce((acc, subtotal) => acc + subtotal, 0);
-    //  console.log(totalPrice, "totalprices");
-    // console.log(orderList.list, "orderlist");
+
     useEffect(() => {
         fetchDetailUser();
     }, []);
@@ -76,14 +69,6 @@ export default function DetailUser({ params }) {
                                                     Weight
                                                 </span>
                                             </div>
-                                            {/* <div className="lg:mr-4 p-3 text-center">
-                                                <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
-                                                    89
-                                                </span>
-                                                <span className="text-sm text-blueGray-400">
-                                                    Comments
-                                                </span>
-                                            </div> */}
                                         </div>
                                     </div>
                                 </div>
